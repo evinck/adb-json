@@ -27,6 +27,13 @@
         "description": "JSON Documents",
         "publisheddate": "4/05/2020",
         "filename": "../../adb-json/json-adb-advanced.md"
-      }
+      },
+       {
+        "title": "Lab 4: SODA in Autonomous Database",
+        "description": "JSON Documents",
+        "publisheddate": "4/05/2020",
+        "filename": "../../adb-json/soda.md"
+       }
+       
     ]
 }
