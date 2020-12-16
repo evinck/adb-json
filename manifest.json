@@ -2,7 +2,7 @@
    "workshoptitle":"JSON in Autonomous Database",  
     "tutorials": [
       {
-        "title": "Lab 1: Connect to the environment",
+        "title": "Lab 1: Connect to the workshop environment",
         "description": "Connect to the Cloud interface",
         "filename": "../../adb-json/adb-connect.md"
       },

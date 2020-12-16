@@ -1,50 +1,65 @@
-# Connect to Autonomous Database (ADW, ATP and AJD)
+# Connect to the workshop environment
 
 ## **Introduction**
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW], Autonomous Transaction Processing [ATP] and Autonomous JSON Database [AJD]) on Oracle Cloud. Here, you will provision a new ATP instance and connect to the database using Oracle SQL Developer Web.
-
-*Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW or AJD database.*
+This lab walks you through the steps to get connect to Oracle Cloud and to the Autonomous Database instance that has been provisioned for you for the duration of this workshop.
 
 Estimated time: 5 minutes
 
 ### Objectives
 
-- Learn how to provision a new Autonomous Database
+- Learn how to connect to Oracle Cloud
 - Learn how to connect to Autonomous Database with SQL Developer Web via the console
-
-### Prerequisites
-- This lab assumes you have completed the **Prerequisites** lab seen in the Contents menu on the right. The lab requires an [Oracle Cloud account](https://myservices.us.oraclecloud.com/mycloud/signup?language=en). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
+- [Optional] Learn how to connect to Autonomous Database with SQL Developer running on your desktop
 
 
-## **STEP 1**: Choosing ADW or ATP from the Services Menu
+## **STEP 1**: Connect to the Oracle Cloud UI
 
-1. Login to the Oracle Cloud, as shown in the previous lab.
+1. Go to [cloud.oracle.com](https://cloud.oracle.com)
+
+    use "oractdemeabdmautodb" as the cloud account name
+    ![](./images/Cloud.png " ")
+
+2. Enter the login and password that were provided to you 
+
+    ![](./images/login1.png " ")
+    (login is like "jsonX" where X is the student number allocated to you)
+
+3. Enter a new password
+
+    ![](./images/login2.png " ")
+    You can use https://passwordsgenerator.net/ to generate a new one
+    or use this one below 
+
+
+        ZWFq%8!x
+
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     __Note:__ You can also directly access your Autonomous Databases through the __Quick Actions__ section of the dashboard.
 
     ![](./images/Picture100-36.png " ")
 
-3. The following steps apply similarly to Autonomous Data Warehouse, Autonomous Transaction Processing or Autonomous JSON Database. This lab shows provisioning of an Autonomous Transaction Processing database, so click **Autonomous Transaction Processing**.
+3. The following steps apply similarly to Autonomous Data Warehouse, Autonomous Transaction Processing or Autonomous JSON Database. This lab will use Autonomous JSON Database, so click **Autonomous JSON Database**.
 
-    ![](images/LabGuide1-39fb4a5b.png " ")
+    ![](images/Selection.png " ")
 
-4. If you already have a list of databases, you can filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
+4. Go under **Compartments** and select the only compartment you have access to, it has the form of "comp_jsonX" where X is the student number allocated to you. 
 
-    ![](./images/Compartment.png " ")
+    ![](./images/Compartment1.png " ")
 
-5. You can see your current default **region** in the top, right hand corner of the page. If you have been instructed to use a different region then the default one, please select it now.
+5. You can now see the JSON database that has been provisioned for this lab
 
-    ![](./images/Region.png " ")
+    ![](./images/Compartment2.png " ")
 
-## **STEP 2**: Creating the ADB instance
+## **STEP 2**:  Explore the JSON Databas UI
 
-1. Click **Create Autonomous Database** to start the instance creation process.
+1. Select the AJD database.
 
-    ![](./images/Picture100-23.png " ")
+    ![](./images/ChooseAJD1.png " ")
 
 2. This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
+
 3. Provide basic information for the autonomous database:
 
     - __Choose a compartment__ - Select a compartment for the database from the drop-down list. For this lab, you may use your **root** compartment. Learn more about compartments [here](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/choosingcompartments.htm) <br>
@@ -154,17 +169,3 @@ You can also watch this video demonstration to learn more about Autonomous Datab
 *Note: Interfaces in this video may look different from the updated interfaces you may see.*
 
 You may now proceed to the following lab.
-
-
-## **Acknowledgements**
-
-- **Author** - Nilay Panchal, ADB Product Management
-- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Nilay Panchal, August 2020
-
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-shared). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
