@@ -88,17 +88,49 @@ Copy and run this dummy query in your worksheet to see that you are now connecte
 
 ![](./images/dummyquery.png " ")
 
-## **STEP 3**: (Optional) Connect to your AJD with local SQL Developper
+## **STEP 4**: (Optional) Connect to your AJD with local SQL Developer
+
+An alternative to SQL Web Developer is to run SQL Developper locally on your desktop and connect to the Autonomous Database.
+
+Autonmous database connection are secured with...
+For that you'll need to download the instance Wallet and configure a connection into SQL Developer.
+
+1. Download the instance wallet
+
+    While in your database **OCI console** click the **DB Connection** button
+    ![](./images/DBConnection.png " ")
+
+    A pop-up screen will appear. Click on the **Download Wallet** button.
+    ![](./images/DownloadWallet.png " ")
+
+    You will be prompted for a password for this wallet. Enter any value as we won't need this feature and click the download button.
+    ![](./images/DownloadWallet2.png " ")
 
 
-## Want to Learn More?
+2. Create and test the database connection
 
-Click [here](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Database.
+    If not done already, download and install SQL Developer from https://www.oracle.com/tools/downloads/sqldev-downloads.html
 
-You can also watch this video demonstration to learn more about Autonomous Database.
+    Open SQL Developer and create a new Database Connection
+    ![](./images/SQLDev1.png " ")
 
-[](youtube:Q6hxMaAPghI)
+    ![](./images/SQLDev2.png " ")
 
-*Note: Interfaces in this video may look different from the updated interfaces you may see.*
 
-You may now proceed to the following lab.
+    Fill the following informations :<br>
+        - **name** for the connection name <br> 
+        - **Username** should be "ADMIN" <br>
+        -  **Password** (select the **"save Password** option) <br>
+        - select **Cloud Wallet** for the Connection Type
+        - using the **Browse** button and select the Wallet zip file that you downloaded on step 1
+        
+    Finally click the **Connect** button.
+    ![](./images/SQLDev3.png " ")
+
+    If the connection details are OK, a window will open where you can test the connection with a dummy sql statement
+
+        select * from dual;
+
+    ![](./images/SQLDev4.png " ")
+
+
