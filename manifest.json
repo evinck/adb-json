@@ -4,19 +4,19 @@
       {
         "title": "Lab 1: Connect to the workshop environment",
         "description": "Connect to the Cloud interface",
-        "filename": "../../adb-json/adb-connect.md"
+        "filename": "adb-connect.md"
       },
       {
         "title": "Lab 2: JSON in Autonomous Database",
         "description": "JSON Documents",
         "publisheddate": "4/05/2020",
-        "filename": "../../adb-json/json-adb.md"
+        "filename": "json-adb.md"
       },
       {
         "title": "Lab 3: Advanced JSON in Autonomous Database",
         "description": "JSON Documents",
         "publisheddate": "4/05/2020",
-        "filename": "../../adb-json/json-adb-advanced.md"
+        "filename": "json-adb-advanced.md"
       },
        {
         "title": "Lab 4: SODA in Autonomous Database",
