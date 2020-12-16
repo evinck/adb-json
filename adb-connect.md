@@ -10,7 +10,7 @@ Estimated time: 5 minutes
 
 - Learn how to connect to Oracle Cloud
 - Learn how to connect to Autonomous Database with SQL Developer Web via the console
-- [Optional] Learn how to connect to Autonomous Database with SQL Developer running on your desktop
+- [Optional] Learn how to connect to Autonomous Database with SQL Developer locally on your desktop
 
 
 ## **STEP 1**: Connect to the Oracle Cloud UI
@@ -58,89 +58,20 @@ Estimated time: 5 minutes
 
     ![](./images/ChooseAJD1.png " ")
 
-2. This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
+2. This brings up the __Autonomous Database Information__ screen.
 
-3. Provide basic information for the autonomous database:
+    ![](./images/Details1.png " ")
 
-    - __Choose a compartment__ - Select a compartment for the database from the drop-down list. For this lab, you may use your **root** compartment. Learn more about compartments [here](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/choosingcompartments.htm) <br>
 
-    *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
+## **STEP 3**: Connect to your AJD with SQL Developer Web
 
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __JSONLab__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONLab__.
+1.  While in your database **OCI console** click the **Tools** tab.
 
-    ![](./images/Picture100-26.png " ")
-
-4. Choose a workload type. Select the workload type for your database from the choices:
-
-    - __Transaction Processing__ - For this lab, choose __Transaction Processing__ as the workload type.
-    - __Data Warehouse__ - Alternatively, you could have chosen Data Warehouse as the workload type.
-    - __JSON__ - Alternatively, you could have chosen JSON as the workload type.
-
-    ![](./images/Picture100-26b.png " ")
-
-5. Choose a deployment type. Select the deployment type for your database from the choices:
-
-    - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
-    - __Dedicated Infrastructure__ - Alternatively, you could have chosen Dedicated Infrastructure as the deployment type.
-
-    ![](./images/Picture100-26_deployment_type.png " ")
-
-6. Configure the database:
-
-    - __Always Free__ - For this lab you may select this option to create an always free autonomous database. An always free database limits the options below and comes with 1 CPU and 20 GB of storage.
-    - __Choose database version__ - Select a database version 19c from the available versions.
-    - __OCPU count__ - Number of CPUs for your service. If you chose an Always Free database, it automatically comes with 1 CPU. If not, for this lab, specify __1 CPU__.
-    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. If you choose an Always Free database, it comes with 20 GB of storage.
-    - __Auto Scaling__ - You may keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand. This is not an option in an always free database.
-    - __New Database Preview__ - If a checkbox is available to preview a new database version, do **not** select it.
-
-    *Note:* You cannot scale up/down an Always Free autonomous database. You may only create one always free ATP and ADW database each, per tenancy
-
-    ![](./images/AlwaysFree.png " ")
-
-7. Create administrator credentials:
-
-    - __Password and Confirm Password__ - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
-    - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
-    - The password cannot contain the username.
-    - The password cannot contain the double quote (") character.
-    - The password must be different from the last 4 passwords used.
-    - The password must not be the same password that is set less than 24 hours ago.
-    - Re-enter the password to confirm it. Make a note of this password.
-
-    ![](./images/Picture100-26d.png " ")
-8. Choose network access:
-    - For this lab, accept the default, "Allow secure access from everywhere".
-    - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
-    - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
-
-    ![](./images/Picture100-26e.png " ")
-
-9. Choose a license type. For this lab, choose __License Included__. The two license types are:
-
-    - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
-    - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
-
-10. Click __Create Autonomous Database__.
-
-    ![](./images/Picture100-27.png " ")
-
-11.  You will be taken to your database OCI console and your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count and storage size.
-
-    ![](./images/AlwaysFreeProvisioning.png " ")
-
-## **STEP 3**: Connect to your ADB with SQL Developer Web
-
-While you can also connect to your autonomous database using local PC desktop tools like Oracle SQL Developer (see this [ADB lab](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-advanced-workshop/freetier/?lab=lab-6-using-wallets-for-secure) for an example), you can now conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
-
-1.  While in your database **OCI console** from Step 2, click the **Tools** tab.
-
-    ![](./images/Tools.png " ")
+    ![](./images/Tools1.png " ")
 
 3.  The Tools page provides you access to SQL Developer Web, Oracle Application Express, Oracle ML User Administration, etc. In the SQL Developer Web box, click **Open SQL Developer Web**.
 
-    ![](./images/SDW.png " ")
+    ![](./images/SQLDevWeb.png " ")
 
 4.  A sign-in page opens for the SQL Developer Web. For this lab, simply use your database instance's default administrator account, **Username - ADMIN**, and with the admin **Password** you specified when creating the database. Click **Sign in**.
 
@@ -156,6 +87,8 @@ Copy and run this dummy query in your worksheet to see that you are now connecte
 
 
 ![](./images/dummyquery.png " ")
+
+## **STEP 3**: (Optional) Connect to your AJD with local SQL Developper
 
 
 ## Want to Learn More?
