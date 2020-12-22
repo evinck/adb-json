@@ -28,11 +28,7 @@ Estimated time: 5 minutes
 3. Enter a new password
 
     ![](./images/login2.png " ")
-    You can use https://passwordsgenerator.net/ to generate a new one
-    or use this one below 
-
-
-        ZWFq%8!x
+    You can use https://passwordsgenerator.net/ to generate a new one. 
 
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
