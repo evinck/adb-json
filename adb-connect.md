@@ -48,7 +48,7 @@ Estimated time: 5 minutes
 
     ![](./images/Compartment2.png " ")
 
-## **STEP 2**:  Explore the JSON Databas UI
+## **STEP 2**:  Explore the JSON Database UI
 
 1. Select the AJD database.
 
