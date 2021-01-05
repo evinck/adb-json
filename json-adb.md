@@ -18,7 +18,7 @@ This lab assumes you have completed the following labs:
 * Prerequisites
 * Lab: Provision and connect to Autonomous Database
 
-### Lab User Scehma
+### Lab User Schema
 
 For this lab we will use the **ADMIN** user schema that is provided when you provisioned an Autonomous Database.
 
