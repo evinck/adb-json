@@ -121,7 +121,7 @@ Do a fuzzy search on the email
 
     <copy>
     soda get emp -f {"email": {"$contains":"fuzzy(qing)"}}
-   </copy>
+    </copy>
 
 ## **Step 4**: Access SODA collections with REST
 Oracle REST Data Services (ORDS) makes it easy to develop REST interfaces for relational data in a JSON database. ORDS is a mid-tier Java application that maps HTTP(S) verbs, such as GET, POST, PUT, DELETE, and so on, to database transactions, and returns any results as JSON data.
@@ -146,11 +146,13 @@ SODA for REST is deployed in ORDS under the following URL pattern, where schema 
 In a shell window on your desktop, try querying the REST service.
 
 You need to replace "URL" with the URL you got in the previous step.
+    
     <copy>
     curl -X POST -u 'ADMIN:Pwd4testPwd4test#'  -H "Content-Type: application/json" --data '{"name":"Miller"}'  "https://<URL>/admin/soda/latest/emp?action=query"
     </copy>
 
 <b>Insert a document with REST</b>
+    
     <copy>
     curl -X POST -u 'ADMIN:Pwd4testPwd4test#' \
     -H "Content-Type: application/json" --data '{"name" : "Jackson", "job" : "Programmer", "salary" : 40000}' \
@@ -162,28 +164,28 @@ You need to replace "URL" with the URL you got in the previous step.
 Although SODA doesn't require any SQL knowledge, you can access and act directly on the backing-store tables that underlie SODA collections.
 
 Check the "emp" table that backs the SODA "emp" collection
+    
+    <copy>
+    desc EMP
+    select * from EMP
+    </copy>
 
-<copy>
-desc EMP
-select * from EMP
-</copy>
-
-JSON data is stored in Oracle's native binary format (aka OSON) in the <i>json_document<i> column.
+JSON data is stored in Oracle's native binary format (aka OSON) in the <i>json_document</i> column.
 
 Select each of the documents in the collection using the <i>json_serialize</i> function.
 
-<copy>
-SELECT json_serialize(json_document) FROM emp;
-</copy>
+    <copy>
+    SELECT json_serialize(json_document) FROM emp;
+    </copy>
 
 Query the collection, projecting out the value of each of the fields from each document, as a SQL value.
 
-<copy>
-SELECT e.json_document.name,
-       e.json_document.job,
-       e.json_document.salary,
-       e.json_document.email
-  FROM emp e;
-</copy>
+    <copy>
+    SELECT e.json_document.name,
+           e.json_document.job,
+           e.json_document.salary,
+           e.json_document.email
+    FROM emp e;
+    </copy>
 
 
