@@ -10,15 +10,12 @@ Estimated time: This lab takes approximately 20 minutes.
 
 Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents (in particular JSON) in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.
 
-There are separate SODA implementations for use with different languages and with the representational state transfer (REST) architectural style. SODA for REST can itself be accessed from almost any programming language. It maps SODA operations to Uniform Resource Locator (URL) patterns.
+There are separate SODA implementations for use with different languages (Java, Python, Node.js, PL/SQL) and with the representational state transfer (REST) architectural style. SODA for REST can itself be accessed from almost any programming language. It maps SODA operations to Uniform Resource Locator (URL) patterns.
 
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Prerequisites
 * Lab: Provision and connect to Autonomous Database
-
-Please 
 
 ## **Step 1**: Connect to ADB with SQL Developer Web
 1.  Open up your SQL Developer Web worksheet, which is connected to your Autonomous Database, from your database OCI Console as you did in [Lab 1](?lab=lab-1-provision-connect-autonomous#STEP3:ConnecttoyourADBwithSQLDeveloperWeb). Sign in, if necessary; here, we are using the **ADMIN** user.
@@ -27,16 +24,20 @@ Please
 
 
     Please note that you <i>cannot</i> use your local (on-desktop) SQL Developer for this workshop. 
-    However SQLcl can be used instead.
+    However SQLcl can be used.
 
 ## **Step 2**: Create a collection
+
+Create a collection named emp.
 
     <copy>
     soda create emp
     </copy>
 
 ![](./images/soda-create.png " " )
-    
+
+List the existing SODA collections, using command soda list.
+
     <copy>
     soda list
     </copy>
@@ -102,6 +103,9 @@ Delete the document
 
 ## **Step 4**: Full-text search in the collection
 
+Create a search index 
+
+
 Full text search
 
     <copy>
@@ -127,10 +131,49 @@ SODA for REST is deployed in ORDS under the following URL pattern, where schema 
 /ords/schema/soda/latest/*
 </copy>
 
+<b>Query a document with REST</b>
 
+In a shell window on your desktop, try querying the REST service.
+
+You need to replace <URL> with the URL you got in the previous step.
+<copy>
+curl -X POST -u 'ADMIN:Pwd4testPwd4test#'  -H "Content-Type: application/json" --data '{"name":"Miller"}'  "https://<URL>/admin/soda/latest/emp?action=query"
+</copy>
+
+<b>Insert a document with REST<b>
+<copy>
+curl -X POST -u 'ADMIN:Pwd4testPwd4test#' \
+ -H "Content-Type: application/json" --data '{"name" : "Jackson", "job" : "Programmer", "salary" : 40000}' \
+ "https://<URL>/admin/soda/latest/emp
+</copy>
 
 
 ## **Step 5**: Access SODA with SQL
-Although SODA doesn't require any SQL knowledge, you can access 
+Although SODA doesn't require any SQL knowledge, you can access and act directly on the backing-store tables that underlie SODA collections.
+
+Check the "emp" table that backs the SODA "emp" collection
+
+<copy>
+desc EMP
+select * from EMP
+</copy>
+
+JSON data is stored in Oracle's native binary format (aka OSON) in the <i>json_document<i> column.
+
+Select each of the documents in the collection using the <i>json_serialize</i> function.
+
+<copy>
+SELECT json_serialize(json_document) FROM emp;
+</copy>
+
+Query the collection, projecting out the value of each of the fields from each document, as a SQL value.
+
+<copy>
+SELECT e.json_document.name,
+       e.json_document.job,
+       e.json_document.salary,
+       e.json_document.email
+  FROM emp e;
+</copy>
 
 
