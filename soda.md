@@ -105,13 +105,23 @@ Delete the document
 
 Create a search index 
 
-
-Full text search
-
     <copy>
-    soda get -f {"email": {"$contains":"fuzzy(example)"}}
+    CREATE SEARCH INDEX idx ON emp(json_document) for JSON;
     </copy>
 
+
+Do a full text search on the email for email containing the "@example.com" substring.
+
+
+    <copy>
+    soda get -f {"email": {"$contains":"@example.com"}}
+    </copy>
+
+Do a fuzzy search on the email
+
+    <copy>
+    soda get emp -f {"email": {"$contains":"fuzzy(qing)"}}
+<   /copy>
 
 ## **Step 4**: Access SODA collections with REST
 Oracle REST Data Services (ORDS) makes it easy to develop REST interfaces for relational data in a JSON database. ORDS is a mid-tier Java application that maps HTTP(S) verbs, such as GET, POST, PUT, DELETE, and so on, to database transactions, and returns any results as JSON data.
