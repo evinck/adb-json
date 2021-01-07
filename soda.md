@@ -121,7 +121,7 @@ Do a fuzzy search on the email
 
     <copy>
     soda get emp -f {"email": {"$contains":"fuzzy(qing)"}}
-<   /copy>
+   /copy>
 
 ## **Step 4**: Access SODA collections with REST
 Oracle REST Data Services (ORDS) makes it easy to develop REST interfaces for relational data in a JSON database. ORDS is a mid-tier Java application that maps HTTP(S) verbs, such as GET, POST, PUT, DELETE, and so on, to database transactions, and returns any results as JSON data.
@@ -137,25 +137,25 @@ The Oracle REST Data Services (ORDS) application in Autonomous JSON Database is 
 
 SODA for REST is deployed in ORDS under the following URL pattern, where schema corresponds to a REST-enabled database schema.
 
-<copy>
-/ords/schema/soda/latest/*
-</copy>
+    <copy>
+    /ords/schema/soda/latest/*
+    </copy>
 
 <b>Query a document with REST</b>
 
 In a shell window on your desktop, try querying the REST service.
 
 You need to replace <URL> with the URL you got in the previous step.
-<copy>
-curl -X POST -u 'ADMIN:Pwd4testPwd4test#'  -H "Content-Type: application/json" --data '{"name":"Miller"}'  "https://<URL>/admin/soda/latest/emp?action=query"
-</copy>
+    <copy>
+    curl -X POST -u 'ADMIN:Pwd4testPwd4test#'  -H "Content-Type: application/json" --data '{"name":"Miller"}'  "https://<URL>/admin/soda/latest/emp?action=query"
+    </copy>
 
-<b>Insert a document with REST<b>
-<copy>
-curl -X POST -u 'ADMIN:Pwd4testPwd4test#' \
- -H "Content-Type: application/json" --data '{"name" : "Jackson", "job" : "Programmer", "salary" : 40000}' \
- "https://<URL>/admin/soda/latest/emp
-</copy>
+<b>Insert a document with REST</b>
+    < copy>
+    curl -X POST -u 'ADMIN:Pwd4testPwd4test#' \
+    -H "Content-Type: application/json" --data '{"name" : "Jackson", "job" : "Programmer", "salary" : 40000}' \
+    "https://<URL>/admin/soda/latest/emp
+    </copy>
 
 
 ## **Step 5**: Access SODA with SQL
