@@ -42,7 +42,7 @@ List the existing SODA collections, using command soda list.
     soda list
     </copy>
 
-## **Step 2**: Insert JSON documents into the collection
+## **Step 3**: Insert JSON documents into the collection
 
 Insert five JSON documents into the collection, one by one.
 
@@ -57,7 +57,7 @@ Insert five JSON documents into the collection, one by one.
 
 Notice how with JSON each document can have is own schema. The last 2 entries of the collection have different schemas than the rest of the entries.
 
-## **Step 3**: Query JSON documents from the collection
+## **Step 4**: Query JSON documents from the collection
 
 Count the number of documents in the collection
 
@@ -77,7 +77,7 @@ Get (retrieve) documents, filtering the collection with a SODA query-by-example 
     soda get emp -f {"salary" : {"$ge" : 100000}}
     </copy>
 
-## **Step 3**: Modify JSON documents from the collection
+## **Step 5**: Modify JSON documents from the collection
 
 
 Get the key ID for the employee named "Blake"
@@ -101,7 +101,7 @@ Delete the document
     soda delete emp -k <put_the_key_here> 
     </copy>
 
-## **Step 4**: Full-text search in the collection
+## **Step 6**: Full-text search in the collection
 
 Create a search index 
 
@@ -123,7 +123,7 @@ Do a fuzzy search on the email
     soda get emp -f {"email": {"$contains":"fuzzy(qing)"}}
     </copy>
 
-## **Step 4**: Access SODA collections with REST
+## **Step 7**: Access SODA collections with REST
 Oracle REST Data Services (ORDS) makes it easy to develop REST interfaces for relational data in a JSON database. ORDS is a mid-tier Java application that maps HTTP(S) verbs, such as GET, POST, PUT, DELETE, and so on, to database transactions, and returns any results as JSON data.
 
 The Oracle REST Data Services (ORDS) application in Autonomous JSON Database is preconfigured and fully managed.
@@ -160,7 +160,7 @@ You need to replace "URL" with the URL you got in the previous step.
     </copy>
 
 
-## **Step 5**: Access SODA with SQL
+## **Step 8**: Access SODA with SQL
 Although SODA doesn't require any SQL knowledge, you can access and act directly on the backing-store tables that underlie SODA collections.
 
 Check the "emp" table that backs the SODA "emp" collection
